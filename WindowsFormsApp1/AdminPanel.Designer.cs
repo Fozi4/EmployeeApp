@@ -38,11 +38,12 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Open_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
+            this.exit_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // return_btn
             // 
-            this.return_btn.Location = new System.Drawing.Point(664, 12);
+            this.return_btn.Location = new System.Drawing.Point(664, 41);
             this.return_btn.Name = "return_btn";
             this.return_btn.Size = new System.Drawing.Size(124, 23);
             this.return_btn.TabIndex = 0;
@@ -127,11 +128,21 @@
             this.delete_btn.UseVisualStyleBackColor = true;
             this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
+            // exit_btn
+            // 
+            this.exit_btn.Location = new System.Drawing.Point(664, 12);
+            this.exit_btn.Name = "exit_btn";
+            this.exit_btn.Size = new System.Drawing.Size(124, 23);
+            this.exit_btn.TabIndex = 6;
+            this.exit_btn.Text = "Exit";
+            this.exit_btn.UseVisualStyleBackColor = true;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.exit_btn);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.Open_btn);
             this.Controls.Add(this.listView1);
@@ -156,5 +167,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button Open_btn;
         private System.Windows.Forms.Button delete_btn;
+        private System.Windows.Forms.Button exit_btn;
     }
 }
