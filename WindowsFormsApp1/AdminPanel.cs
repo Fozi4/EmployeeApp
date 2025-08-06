@@ -187,5 +187,10 @@ namespace WindowsFormsApp1
                 File.WriteAllText(filePath, updatedJson);
             }
         }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

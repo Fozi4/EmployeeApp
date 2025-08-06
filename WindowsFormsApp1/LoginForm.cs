@@ -48,5 +48,10 @@ namespace WindowsFormsApp1
             }
             else { label_error.Visible = true; }
         }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
