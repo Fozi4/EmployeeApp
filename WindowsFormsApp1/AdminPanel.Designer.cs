@@ -37,6 +37,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Open_btn = new System.Windows.Forms.Button();
+            this.delete_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // return_btn
@@ -116,11 +117,22 @@
             this.Open_btn.UseVisualStyleBackColor = true;
             this.Open_btn.Click += new System.EventHandler(this.Open_btn_Click);
             // 
+            // delete_btn
+            // 
+            this.delete_btn.Location = new System.Drawing.Point(308, 387);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Size = new System.Drawing.Size(105, 51);
+            this.delete_btn.TabIndex = 5;
+            this.delete_btn.Text = "Delete Project";
+            this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.Open_btn);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.project_add);
@@ -143,5 +155,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button Open_btn;
+        private System.Windows.Forms.Button delete_btn;
     }
 }

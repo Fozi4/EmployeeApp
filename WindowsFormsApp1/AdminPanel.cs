@@ -146,5 +146,15 @@ namespace WindowsFormsApp1
                 MessageBox.Show("File is not founded, please try again");
             }
         }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            if(listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please choose an item from list view");
+                return;
+            }
+            var selectedItem = listView1.SelectedItems[0];
+        }
     }
 }
