@@ -1,14 +1,23 @@
 [
   {
+    "Id": "0fc8eb18-6195-4cc8-93fb-67ca5c1663e9",
     "ProjectName": "needToLearn",
     "FilePath": "C:\\Users\\user\\Desktop\\needToLearn.txt",
     "AddedBy": "admin",
-    "LastOpenedBy": ""
+    "LastOpendBy": "adminM"
   },
   {
+    "Id": "e625277d-b949-4859-b4aa-9bc4f96cb423",
+    "ProjectName": "Junior_Py_Dev",
+    "FilePath": "C:\\Users\\user\\Desktop\\Junior_Py_Dev.pdf",
+    "AddedBy": "admin",
+    "LastOpendBy": "adminM"
+  },
+  {
+    "Id": "a4919260-b3c1-4880-96f8-7c875f066bcb",
     "ProjectName": "project",
     "FilePath": "C:\\Users\\user\\Desktop\\project.txt",
-    "AddedBy": "admin",
-    "LastOpenedBy": ""
+    "AddedBy": "adminM",
+    "LastOpendBy": "adminM"
   }
 ]

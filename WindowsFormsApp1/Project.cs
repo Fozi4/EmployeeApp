@@ -8,6 +8,7 @@ namespace WindowsFormsApp1
 {
     public class Project
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
         public string ProjectName { get; set; }
         public string FilePath { get; set; }
         public string AddedBy { get; set; }

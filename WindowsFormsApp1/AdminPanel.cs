@@ -52,6 +52,7 @@ namespace WindowsFormsApp1
                     string projectName = Path.GetFileNameWithoutExtension(selectedFilePath);
                     Project newProject = new Project
                     {
+                        Id = Guid.NewGuid(),
                         ProjectName = projectName,
                         FilePath = selectedFilePath,
                         AddedBy = CurrentUser.CurrentUsername,
@@ -94,11 +95,12 @@ namespace WindowsFormsApp1
                 ListViewItem item = new ListViewItem(project.ProjectName);
                 item.SubItems.Add(project.FilePath);
                 item.SubItems.Add(project.AddedBy);
-
+                item.SubItems.Add(project.LastOpendBy);
+                item.Tag = project.Id;
                 listView1.Items.Add(item);
             }
         }
-       
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -110,22 +112,37 @@ namespace WindowsFormsApp1
 
         private void Open_btn_Click(object sender, EventArgs e)
         {
-            if(listView1.SelectedItems.Count == 0)
+            if (listView1.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Please choose project from the list");
+                MessageBox.Show("Please choose a project from the list");
                 return;
             }
+
             var selectedItem = listView1.SelectedItems[0];
+            Guid selectedId = (Guid)selectedItem.Tag; 
             string filePath = selectedItem.SubItems[1].Text;
-            string json = File.ReadAllText(filePath);
+
+            string jsonPath = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\projects.json";
+            if (!File.Exists(jsonPath))
+            {
+                MessageBox.Show("Project metadata file not found.");
+                return;
+            }
+
+            string json = File.ReadAllText(jsonPath);
             var projects = JsonConvert.DeserializeObject<List<Project>>(json);
-            string projectName = selectedItem.SubItems[0].Text;
-            var selectedProject = projects.FirstOrDefault(p => p.ProjectName == projectName);
-            if (selectedProject != null) 
+            var selectedProject = projects.FirstOrDefault(p => p.Id == selectedId);
+
+            if (selectedProject != null)
             {
                 selectedProject.LastOpendBy = CurrentUser.CurrentUsername;
+
+                string updatedJson = JsonConvert.SerializeObject(projects, Formatting.Indented);
+                File.WriteAllText(jsonPath, updatedJson);
+
+                LoadProjectsToListView();
             }
-            LoadProjectsToListView();
+
             if (File.Exists(filePath))
             {
                 try
@@ -136,14 +153,14 @@ namespace WindowsFormsApp1
                         UseShellExecute = true
                     });
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Failed to open file: " + ex.Message);
                 }
             }
             else
             {
-                MessageBox.Show("File is not founded, please try again");
+                MessageBox.Show("File not found, please try again.");
             }
         }
 
@@ -155,6 +172,20 @@ namespace WindowsFormsApp1
                 return;
             }
             var selectedItem = listView1.SelectedItems[0];
+            Guid selectedId = (Guid)selectedItem.Tag;
+            if (selectedItem != null) {
+                listView1.Items.RemoveAt(selectedItem.Index);
+            }
+            string filePath = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\projects.json";
+            if (!File.Exists(filePath)) { return; }
+            string json = File.ReadAllText(filePath);
+            var projects = JsonConvert.DeserializeObject<List<Project>>(json);
+            var projectToRemove = projects.FirstOrDefault(p => p.Id == selectedId);
+            if (projectToRemove != null) {
+                projects.Remove(projectToRemove);
+                string updatedJson = JsonConvert.SerializeObject(projects, Formatting.Indented);
+                File.WriteAllText(filePath, updatedJson);
+            }
         }
     }
 }

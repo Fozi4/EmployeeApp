@@ -5,8 +5,14 @@
     "Role": "Admin"
   },
   {
+    "Username": "adminM",
+    "Password": "adminM123",
+    "Role": "Admin"
+  },
+  {
     "Username": "marian",
     "Password": "12345",
     "Role": "Employee"
   }
+
 ]
