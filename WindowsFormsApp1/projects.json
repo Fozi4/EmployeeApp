@@ -1,23 +1,24 @@
 [
   {
-    "Id": "0fc8eb18-6195-4cc8-93fb-67ca5c1663e9",
-    "ProjectName": "needToLearn",
-    "FilePath": "C:\\Users\\user\\Desktop\\needToLearn.txt",
+    "Id": "f02ec71f-549e-4544-a3b3-1553765fc32a",
+    "ProjectName": "План",
+    "FilePath": "C:\\Users\\user\\Desktop\\План.docx",
     "AddedBy": "admin",
-    "LastOpendBy": "adminM"
+    "LastOpendBy": "admin",
+    "AssignedTo": "marian",
+    "Task": "Task",
+    "TaskPath": "C:\\Users\\user\\Desktop\\Task.txt",
+    "Status": null
   },
   {
-    "Id": "e625277d-b949-4859-b4aa-9bc4f96cb423",
-    "ProjectName": "Junior_Py_Dev",
-    "FilePath": "C:\\Users\\user\\Desktop\\Junior_Py_Dev.pdf",
-    "AddedBy": "admin",
-    "LastOpendBy": "adminM"
-  },
-  {
-    "Id": "a4919260-b3c1-4880-96f8-7c875f066bcb",
+    "Id": "20ac987f-aae6-4014-9a4a-ac7448e31d48",
     "ProjectName": "project",
     "FilePath": "C:\\Users\\user\\Desktop\\project.txt",
-    "AddedBy": "adminM",
-    "LastOpendBy": "admin"
+    "AddedBy": "admin",
+    "LastOpendBy": null,
+    "AssignedTo": null,
+    "Task": null,
+    "TaskPath": null,
+    "Status": null
   }
 ]

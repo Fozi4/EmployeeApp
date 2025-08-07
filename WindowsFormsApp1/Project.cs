@@ -13,6 +13,10 @@ namespace WindowsFormsApp1
         public string FilePath { get; set; }
         public string AddedBy { get; set; }
         public string LastOpendBy { get; set; }
+        public string AssignedTo { get; set; }
+        public string Task {  get; set; }
+        public string TaskPath { get; set; }
+        public string Status { get; set; }
     }
 
 }
