@@ -48,5 +48,12 @@ namespace WindowsFormsApp1
             }
             else { label_error.Visible = true; }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            this.Hide();
+        }
     }
 }

@@ -34,6 +34,7 @@
             this.Password_txtBox = new System.Windows.Forms.TextBox();
             this.Login_btn = new System.Windows.Forms.Button();
             this.label_error = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // UsernameLabel
@@ -83,25 +84,37 @@
             // 
             this.label_error.AutoSize = true;
             this.label_error.ForeColor = System.Drawing.Color.Red;
-            this.label_error.Location = new System.Drawing.Point(96, 118);
+            this.label_error.Location = new System.Drawing.Point(150, 144);
             this.label_error.Name = "label_error";
             this.label_error.Size = new System.Drawing.Size(124, 13);
             this.label_error.TabIndex = 5;
             this.label_error.Text = "Wrong password or login";
             this.label_error.Visible = false;
             // 
-            // Form1
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(87, 118);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(133, 13);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Don\'t have an accout yet?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 220);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label_error);
             this.Controls.Add(this.Login_btn);
             this.Controls.Add(this.Password_txtBox);
             this.Controls.Add(this.Username_txtBox);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
-            this.Name = "Form1";
+            this.Name = "LoginForm";
             this.Text = "Login Form";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,6 +129,7 @@
         private System.Windows.Forms.TextBox Password_txtBox;
         private System.Windows.Forms.Button Login_btn;
         private System.Windows.Forms.Label label_error;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
