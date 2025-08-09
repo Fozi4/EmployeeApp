@@ -2,17 +2,31 @@
   {
     "Username": "admin",
     "Password": "admin123",
-    "Role": "Admin"
+    "Role": 0
   },
   {
     "Username": "adminM",
     "Password": "adminM123",
-    "Role": "Admin"
+    "Role": 0
   },
   {
     "Username": "marian",
     "Password": "12345",
-    "Role": "Employee"
+    "Role": 1
+  },
+  {
+    "Username": "Orbit",
+    "Password": "1234",
+    "Role": 0
+  },
+  {
+    "Username": "Dior",
+    "Password": "12345",
+    "Role": 0
+  },
+  {
+    "Username": "employee",
+    "Password": "09876",
+    "Role": 1
   }
-
 ]

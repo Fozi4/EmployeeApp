@@ -34,11 +34,8 @@
             this.Password_txtBox = new System.Windows.Forms.TextBox();
             this.Login_btn = new System.Windows.Forms.Button();
             this.label_error = new System.Windows.Forms.Label();
-<<<<<<< HEAD
             this.exit_btn = new System.Windows.Forms.Button();
-=======
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
->>>>>>> GUI
             this.SuspendLayout();
             // 
             // UsernameLabel
@@ -95,7 +92,6 @@
             this.label_error.Text = "Wrong password or login";
             this.label_error.Visible = false;
             // 
-<<<<<<< HEAD
             // exit_btn
             // 
             this.exit_btn.Location = new System.Drawing.Point(365, 12);
@@ -105,7 +101,6 @@
             this.exit_btn.Text = "Exit";
             this.exit_btn.UseVisualStyleBackColor = true;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
-=======
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -116,18 +111,17 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Don\'t have an accout yet?";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
->>>>>>> GUI
+
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 220);
-<<<<<<< HEAD
             this.Controls.Add(this.exit_btn);
-=======
+
             this.Controls.Add(this.linkLabel1);
->>>>>>> GUI
+
             this.Controls.Add(this.label_error);
             this.Controls.Add(this.Login_btn);
             this.Controls.Add(this.Password_txtBox);
@@ -149,11 +143,8 @@
         private System.Windows.Forms.TextBox Password_txtBox;
         private System.Windows.Forms.Button Login_btn;
         private System.Windows.Forms.Label label_error;
-<<<<<<< HEAD
         private System.Windows.Forms.Button exit_btn;
-=======
         private System.Windows.Forms.LinkLabel linkLabel1;
->>>>>>> GUI
     }
 }
 

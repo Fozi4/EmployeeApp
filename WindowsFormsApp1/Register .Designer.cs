@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.password_txtBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.code_txtBox = new System.Windows.Forms.TextBox();
             this.login_txtBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.adm_code_lbl = new System.Windows.Forms.Label();
+            this.comboBoxRegisterAs = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.register_btn = new System.Windows.Forms.Button();
+            this.ext_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // password_txtBox
@@ -46,12 +47,13 @@
             this.password_txtBox.Size = new System.Drawing.Size(154, 20);
             this.password_txtBox.TabIndex = 0;
             // 
-            // textBox2
+            // code_txtBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(347, 215);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.code_txtBox.Location = new System.Drawing.Point(347, 215);
+            this.code_txtBox.Name = "code_txtBox";
+            this.code_txtBox.Size = new System.Drawing.Size(100, 20);
+            this.code_txtBox.TabIndex = 1;
+            this.code_txtBox.Visible = false;
             // 
             // login_txtBox
             // 
@@ -78,25 +80,27 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
-            // label3
+            // adm_code_lbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(277, 218);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Admin Code";
+            this.adm_code_lbl.AutoSize = true;
+            this.adm_code_lbl.Location = new System.Drawing.Point(231, 218);
+            this.adm_code_lbl.Name = "adm_code_lbl";
+            this.adm_code_lbl.Size = new System.Drawing.Size(110, 13);
+            this.adm_code_lbl.TabIndex = 5;
+            this.adm_code_lbl.Text = "Admin Code Required";
+            this.adm_code_lbl.Visible = false;
             // 
-            // comboBox1
+            // comboBoxRegisterAs
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxRegisterAs.FormattingEnabled = true;
+            this.comboBoxRegisterAs.Items.AddRange(new object[] {
             "Admin",
             "Employee"});
-            this.comboBox1.Location = new System.Drawing.Point(116, 110);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 21);
-            this.comboBox1.TabIndex = 6;
+            this.comboBoxRegisterAs.Location = new System.Drawing.Point(116, 110);
+            this.comboBoxRegisterAs.Name = "comboBoxRegisterAs";
+            this.comboBoxRegisterAs.Size = new System.Drawing.Size(154, 21);
+            this.comboBoxRegisterAs.TabIndex = 6;
+            this.comboBoxRegisterAs.SelectedIndexChanged += new System.EventHandler(this.comboBoxRegisterAs_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -117,19 +121,30 @@
             this.register_btn.UseVisualStyleBackColor = true;
             this.register_btn.Click += new System.EventHandler(this.register_btn_Click);
             // 
+            // ext_btn
+            // 
+            this.ext_btn.Location = new System.Drawing.Point(372, 12);
+            this.ext_btn.Name = "ext_btn";
+            this.ext_btn.Size = new System.Drawing.Size(75, 23);
+            this.ext_btn.TabIndex = 9;
+            this.ext_btn.Text = "Exit";
+            this.ext_btn.UseVisualStyleBackColor = true;
+            this.ext_btn.Click += new System.EventHandler(this.ext_btn_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 247);
+            this.Controls.Add(this.ext_btn);
             this.Controls.Add(this.register_btn);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBoxRegisterAs);
+            this.Controls.Add(this.adm_code_lbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.login_txtBox);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.code_txtBox);
             this.Controls.Add(this.password_txtBox);
             this.Name = "Register";
             this.Text = "Register";
@@ -141,13 +156,14 @@
         #endregion
 
         private System.Windows.Forms.TextBox password_txtBox;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox code_txtBox;
         private System.Windows.Forms.TextBox login_txtBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label adm_code_lbl;
+        private System.Windows.Forms.ComboBox comboBoxRegisterAs;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button register_btn;
+        private System.Windows.Forms.Button ext_btn;
     }
 }
