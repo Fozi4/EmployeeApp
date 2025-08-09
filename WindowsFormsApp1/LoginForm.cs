@@ -49,9 +49,17 @@ namespace WindowsFormsApp1
             else { label_error.Visible = true; }
         }
 
+<<<<<<< HEAD
         private void exit_btn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+=======
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            this.Hide();
+>>>>>>> GUI
         }
     }
 }
