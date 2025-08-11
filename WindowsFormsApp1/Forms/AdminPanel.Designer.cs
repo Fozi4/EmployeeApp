@@ -35,14 +35,15 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Open_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
             this.exit_btn = new System.Windows.Forms.Button();
             this.task_btn = new System.Windows.Forms.Button();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.opn_task_btn = new System.Windows.Forms.Button();
+            this.del_employee_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // return_btn
@@ -57,17 +58,17 @@
             // 
             // employee_add
             // 
-            this.employee_add.Location = new System.Drawing.Point(415, 387);
+            this.employee_add.Location = new System.Drawing.Point(347, 387);
             this.employee_add.Name = "employee_add";
-            this.employee_add.Size = new System.Drawing.Size(115, 51);
+            this.employee_add.Size = new System.Drawing.Size(109, 51);
             this.employee_add.TabIndex = 1;
-            this.employee_add.Text = "Add Employee";
+            this.employee_add.Text = "Assign Employee";
             this.employee_add.UseVisualStyleBackColor = true;
             this.employee_add.Click += new System.EventHandler(this.employee_add_Click);
             // 
             // project_add
             // 
-            this.project_add.Location = new System.Drawing.Point(306, 387);
+            this.project_add.Location = new System.Drawing.Point(238, 387);
             this.project_add.Name = "project_add";
             this.project_add.Size = new System.Drawing.Size(103, 51);
             this.project_add.TabIndex = 2;
@@ -110,9 +111,22 @@
             this.columnHeader4.Text = "Recent Changes";
             this.columnHeader4.Width = 98;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Assigned To ";
+            this.columnHeader5.Width = 78;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Task";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Status";
+            // 
             // Open_btn
             // 
-            this.Open_btn.Location = new System.Drawing.Point(191, 387);
+            this.Open_btn.Location = new System.Drawing.Point(123, 387);
             this.Open_btn.Name = "Open_btn";
             this.Open_btn.Size = new System.Drawing.Size(109, 51);
             this.Open_btn.TabIndex = 4;
@@ -122,7 +136,7 @@
             // 
             // delete_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(80, 387);
+            this.delete_btn.Location = new System.Drawing.Point(12, 387);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(105, 51);
             this.delete_btn.TabIndex = 5;
@@ -142,7 +156,7 @@
             // 
             // task_btn
             // 
-            this.task_btn.Location = new System.Drawing.Point(536, 387);
+            this.task_btn.Location = new System.Drawing.Point(564, 387);
             this.task_btn.Name = "task_btn";
             this.task_btn.Size = new System.Drawing.Size(110, 51);
             this.task_btn.TabIndex = 7;
@@ -150,22 +164,9 @@
             this.task_btn.UseVisualStyleBackColor = true;
             this.task_btn.Click += new System.EventHandler(this.task_btn_Click);
             // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Assigned To ";
-            this.columnHeader5.Width = 78;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Task";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Status";
-            // 
             // opn_task_btn
             // 
-            this.opn_task_btn.Location = new System.Drawing.Point(653, 387);
+            this.opn_task_btn.Location = new System.Drawing.Point(680, 387);
             this.opn_task_btn.Name = "opn_task_btn";
             this.opn_task_btn.Size = new System.Drawing.Size(108, 51);
             this.opn_task_btn.TabIndex = 8;
@@ -173,11 +174,22 @@
             this.opn_task_btn.UseVisualStyleBackColor = true;
             this.opn_task_btn.Click += new System.EventHandler(this.opn_task_btn_Click);
             // 
+            // del_employee_btn
+            // 
+            this.del_employee_btn.Location = new System.Drawing.Point(462, 387);
+            this.del_employee_btn.Name = "del_employee_btn";
+            this.del_employee_btn.Size = new System.Drawing.Size(96, 51);
+            this.del_employee_btn.TabIndex = 9;
+            this.del_employee_btn.Text = "Unassign Employee";
+            this.del_employee_btn.UseVisualStyleBackColor = true;
+            this.del_employee_btn.Click += new System.EventHandler(this.del_employee_btn_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.del_employee_btn);
             this.Controls.Add(this.opn_task_btn);
             this.Controls.Add(this.task_btn);
             this.Controls.Add(this.exit_btn);
@@ -210,5 +222,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button opn_task_btn;
+        private System.Windows.Forms.Button del_employee_btn;
     }
 }

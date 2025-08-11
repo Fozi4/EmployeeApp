@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
             string username = login_txtBox.Text;
             string password = password_txtBox.Text;
             string role = comboBoxRegisterAs.SelectedItem.ToString();
-            string json_path = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\users.json";
+            string json_path = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\Data\\users.json";
             List<User> users = new List<User>();
             if (File.Exists(json_path)) {
                 string json = File.ReadAllText(json_path);

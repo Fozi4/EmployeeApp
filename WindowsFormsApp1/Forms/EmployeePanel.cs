@@ -31,11 +31,11 @@ namespace WindowsFormsApp1
         {
             listView1.Items.Clear();
 
-            string filePath = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\projects.json";
-            if (!File.Exists(filePath))
+            string jsonPath = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\Data\\projects.json";
+            if (!File.Exists(jsonPath))
                 return;
 
-            string json = File.ReadAllText(filePath);
+            string json = File.ReadAllText(jsonPath);
             var projects = JsonConvert.DeserializeObject<List<Project>>(json);
 
             foreach (var project in projects)
@@ -72,7 +72,7 @@ namespace WindowsFormsApp1
             var selectedItem = listView1.SelectedItems[0];
             Guid selectedId = (Guid)selectedItem.Tag;
 
-            string jsonPath = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\projects.json";
+            string jsonPath = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\Data\\projects.json";
             if (!File.Exists(jsonPath))
             {
                 MessageBox.Show("Project metadata file not found.");
@@ -129,9 +129,9 @@ namespace WindowsFormsApp1
 
         private void myTasks_checkBox_CheckedChanged(object sender, EventArgs e)
         {
-            string json_path = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\projects.json";
-            if (!File.Exists(json_path)) { MessageBox.Show("Json file does not exist"); return; }
-            string json = File.ReadAllText(json_path);
+            string jsonPath = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\Data\\projects.json";
+            if (!File.Exists(jsonPath)) { MessageBox.Show("Json file does not exist"); return; }
+            string json = File.ReadAllText(jsonPath);
             var projects = JsonConvert.DeserializeObject<List<Project>>(json);
             var current_user = CurrentUser.CurrentUsername;
             IEnumerable<Project> my_projects;
@@ -169,7 +169,7 @@ namespace WindowsFormsApp1
             var selectedItem = listView1.SelectedItems[0];
             Guid selectedId = (Guid)selectedItem.Tag;
 
-            string jsonPath = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\projects.json";
+            string jsonPath = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\Data\\projects.json";
             if (!File.Exists(jsonPath))
             {
                 MessageBox.Show("Project metadata file not found.");
@@ -259,8 +259,8 @@ namespace WindowsFormsApp1
 
             var selectedItem = listView1.SelectedItems[0];
             Guid selectedId = (Guid)selectedItem.Tag;
-            string json_path = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\projects.json";
-            var projects = JsonConvert.DeserializeObject<List<Project>>(File.ReadAllText(json_path));
+            string jsonPath = "D:\\EmployeeApp\\WindowsFormsApp1\\WindowsFormsApp1\\Data\\projects.json";
+            var projects = JsonConvert.DeserializeObject<List<Project>>(File.ReadAllText(jsonPath));
             var project = projects.FirstOrDefault(p => p.Id == selectedId);
             if (CurrentUser.CurrentUsername == project.AssignedTo)
             {
@@ -274,7 +274,7 @@ namespace WindowsFormsApp1
                         if (project != null)
                         {
                             project.Status = status;
-                            File.WriteAllText(json_path, JsonConvert.SerializeObject(projects, Formatting.Indented));
+                            File.WriteAllText(jsonPath, JsonConvert.SerializeObject(projects, Formatting.Indented));
                             MessageBox.Show($"Status updated to: {status}");
                             LoadProjectsToListView();
 
